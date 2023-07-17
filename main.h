@@ -2,6 +2,8 @@
 # define _MAIN_
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 
 typedef struct types_prints

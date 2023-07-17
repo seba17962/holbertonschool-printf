@@ -13,8 +13,8 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
- * print_char - ...
- * @args: ...
+ * print_char - print a char
+ * @args: the char to print
  * Return: ...
  */
 int print_char(va_list args)
@@ -23,8 +23,8 @@ int print_char(va_list args)
 	return (1);
 }
 /**
- * print_str - ...
- * @args: ...
+ * print_str - print a string
+ * @args: the string to print
  * Return: ...
  */
 int print_str(va_list args)

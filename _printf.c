@@ -4,6 +4,7 @@ int
 _printf(const char *format, ...)
 {
 	va_list args;
+	unsigned int i = 0;
 	unsigned int len = 0;
 
 	va_start(args, format);
@@ -11,7 +12,7 @@ _printf(const char *format, ...)
 	{
 		if (format[len] != '%')
 		{
-			_putchar(format[len]);
+			i += _putchar(format[len]);
 		}
 		else
 		{
@@ -24,12 +25,12 @@ _printf(const char *format, ...)
 
 			if (format[len] == '%')
 				_putchar(format[len]);
-			else
-				get_func(format[len], args);
+			else if (format[len] == 's' || format[len] == 'c')
+				i +=get_func(format[len], args);
 		}
 		len++;
 	}
 
 	va_end(args);
-	return (len);
+	return (i);
 }
