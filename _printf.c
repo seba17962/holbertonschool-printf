@@ -7,28 +7,36 @@ _printf(const char *format, ...)
 	unsigned int i = 0;
 	unsigned int len = 0;
 
+
 	va_start(args, format);
-	while (format && format[len])
+	while (format && format[i])
 	{
-		if (format[len] != '%')
+		if (format[i] != '%')
 		{
 			i += _putchar(format[len]);
+			len += _putchar(format[i]);
 		}
 		else
 		{
-			len++;
-			if (format[len] == '\0')
+			i++;
+			if (format[i] == '\0')
 				return (-1);
 
-			while (format[len] == ' ')
-				len++;
+			while (format[i] == ' ')
+				i++;
 
 			if (format[len] == '%')
 				_putchar(format[len]);
 			else if (format[len] == 's' || format[len] == 'c')
-				i +=get_func(format[len], args);
+			i += get_func(format[len], args);
+
+			if (format[i] == '%')
+				_putchar(format[i]);
+			else
+				len += get_func(format[i], args);
+
 		}
-		len++;
+		i++;
 	}
 
 	va_end(args);
