@@ -14,7 +14,10 @@ int get_func(char format, va_list args)
 
 	func_t types[] = {
 		{"c", print_char},
-		{"s", print_str}
+		{"s", print_str},
+		{"d", print_int},
+		{"i", print_int},
+		{NULL, NULL}
 	};
 
 	while (types[i].type)

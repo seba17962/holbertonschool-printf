@@ -4,30 +4,30 @@ int
 _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int len = 0;
+	unsigned int i = 0, len = 0;
 
 	va_start(args, format);
-	while (format && format[len])
+	while (format && format[i])
 	{
-		if (format[len] != '%')
+		if (format[i] != '%')
 		{
-			_putchar(format[len]);
+			len += _putchar(format[i]);
 		}
 		else
 		{
-			len++;
-			if (format[len] == '\0')
+			i++;
+			if (format[i] == '\0')
 				return (-1);
 
-			while (format[len] == ' ')
-				len++;
+			while (format[i] == ' ')
+				i++;
 
-			if (format[len] == '%')
-				_putchar(format[len]);
+			if (format[i] == '%')
+				_putchar(format[i]);
 			else
-				get_func(format[len], args);
+				len += get_func(format[i], args);
 		}
-		len++;
+		i++;
 	}
 
 	va_end(args);
