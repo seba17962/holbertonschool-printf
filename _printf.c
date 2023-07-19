@@ -25,13 +25,13 @@ _printf(const char *format, ...)
 			while (format[i] == ' ')
 				i++;
 
-			if (format[len] == '%')
-				_putchar(format[len]);
-			else if (format[len] == 's' || format[len] == 'c')
-			i += get_func(format[len], args);
-
 			if (format[i] == '%')
 				_putchar(format[i]);
+
+			else if (format[i] == 's' || format[i] == 'c' ||
+					format[i] == 'i' || format[i] == 'd')
+			i += get_func(format[i], args);
+
 			else
 				len += get_func(format[i], args);
 
