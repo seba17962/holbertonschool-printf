@@ -59,7 +59,7 @@ int print_str(va_list args)
 int print_int(va_list args)
 {
 	unsigned int i = 0, len = 0, negative = 0;
-	int num = va_arg(args, int), aux = num;
+	long int num = va_arg(args, int), aux = num;
 	char *numStr;
 
 	if (num == 0)
@@ -76,6 +76,7 @@ int print_int(va_list args)
 		negative = 1;
 		num = -num;
 		numStr = malloc(len + 2);
+		len++;
 	} else
 		numStr = malloc(len + 1);
 
