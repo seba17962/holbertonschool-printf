@@ -18,5 +18,6 @@ int print_char(va_list args);
 int print_str(va_list args);
 int print_int(va_list args);
 int get_func(char format, va_list args);
+int validate(char format);
 
 # endif

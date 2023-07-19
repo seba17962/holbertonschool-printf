@@ -30,3 +30,17 @@ int get_func(char format, va_list args)
 
 	return (len);
 }
+
+int validate(char format)
+{
+	char *validators = "csdi";
+	int i = 0, val = 0;
+
+	while (validators[i])
+	{
+		if (format == validators[i++])
+			val = 1;
+	}
+
+	return (val);
+}
