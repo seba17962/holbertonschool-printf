@@ -64,13 +64,6 @@ int print_int(va_list args)
 
 	if (num == 0)
 		return	(_putchar('0'));
-
-	while (aux != 0)
-	{
-		aux = aux / 10;
-		len++;
-	}
-
 	if (num < 0)
 	{
 		negative = 1;
@@ -84,22 +77,23 @@ int print_int(va_list args)
 		num = -num;
 		len++;
 	}
-
+	while (aux != 0)
+	{
+		aux = aux / 10;
+		len++;
+	}
 	numStr = malloc(len + negative + 1);
-
 	while (num > 0)
 	{
 		numStr[i++] = num % 10 + '0';
 		num = num / 10;
 	}
-
 	if (negative)
 		numStr[i++] = '-';
 	numStr[i] = '\0';
-
 	while (i > 0)
 		_putchar(numStr[--i]);
-
 	free(numStr);
+
 	return (len);
 }
