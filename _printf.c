@@ -1,7 +1,11 @@
 # include "main.h"
-
-int
-_printf(const char *format, ...)
+/**
+ * _printf - our basic version of printf
+ * @format: string to print
+ *
+ * Return: the numbers of chars printed
+ */
+int _printf(const char *format, ...)
 {
 	va_list args;
 	unsigned int i = 0, len = 0;

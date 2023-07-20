@@ -1,11 +1,11 @@
 # include "main.h"
 
 /**
- * get_func - ...
- * @format: ...
- * @args: ...
+ * get_func - call a function to print a specific format
+ * @format: the format to print
+ * @args: list of variadic arguments
  *
- * Return: ...
+ * Return: the int returned of the respective function
  */
 
 int get_func(char format, va_list args)
@@ -30,7 +30,12 @@ int get_func(char format, va_list args)
 
 	return (len);
 }
-
+/**
+ * validate - function to valid a char
+ *
+ * @format: the char to validate
+ * Return: 1 if format is valid, 0 if not
+ */
 int validate(char format)
 {
 	char *validators = "csdi";
