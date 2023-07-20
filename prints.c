@@ -15,7 +15,7 @@ int _putchar(char c)
 /**
  * print_char - print a char
  * @args: the char to print
- * Return: ...
+ * Return: 1
  */
 int print_char(va_list args)
 {
@@ -25,7 +25,7 @@ int print_char(va_list args)
 /**
  * print_str - print a string
  * @args: the string to print
- * Return: ...
+ * Return: the length of the string
  */
 int print_str(va_list args)
 {
@@ -52,9 +52,9 @@ int print_str(va_list args)
 	return (6);
 }
 /**
- * print_int - ...
- * @args: ...
- * Return: ...
+ * print_int - print a int
+ * @args: the int to print
+ * Return: the numbers of chars of the int
  */
 int print_int(va_list args)
 {

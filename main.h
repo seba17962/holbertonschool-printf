@@ -11,6 +11,12 @@
  * @func: the function pointer of the specific format
  */
 
+/**
+ * struct types_prints - Struct of formats to print
+ * @type: format to print;
+ * @func: the function pointer of the specific format
+ */
+
 typedef struct types_prints
 {
 	char *type;
