@@ -83,6 +83,8 @@ int print_int(va_list args)
 		len++;
 	}
 	numStr = malloc(len + negative + 1);
+	if (numStr == NULL)
+		return (-1);
 	while (num > 0)
 	{
 		numStr[i++] = num % 10 + '0';
@@ -94,6 +96,5 @@ int print_int(va_list args)
 	while (i > 0)
 		_putchar(numStr[--i]);
 	free(numStr);
-
 	return (len);
 }
