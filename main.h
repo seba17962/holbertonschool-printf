@@ -2,9 +2,14 @@
 # define _MAIN_
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <stdlib.h>
+# include <limits.h>
+
+/**
+ * struct types_prints - Struct of formats to print
+ * @type: format to print;
+ * @func: the function pointer of the specific format
+ */
 
 typedef struct types_prints
 {

@@ -74,11 +74,18 @@ int print_int(va_list args)
 	if (num < 0)
 	{
 		negative = 1;
+		if (num == INT_MIN)
+		{
+			numStr = "-2147483648";
+			while (numStr[i] != '\0')
+				len += _putchar(numStr[i++]);
+			return (len);
+		}
 		num = -num;
-		numStr = malloc(len + 2);
 		len++;
-	} else
-		numStr = malloc(len + 1);
+	}
+
+	numStr = malloc(len + negative + 1);
 
 	while (num > 0)
 	{
