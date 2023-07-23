@@ -42,13 +42,7 @@ int print_str(va_list args)
 
 		return (i);
 	}
-
-	_putchar('(');
-	_putchar('n');
-	_putchar('u');
-	_putchar('l');
-	_putchar('l');
-	_putchar(')');
+	write(1, "(null)", 6);
 	return (6);
 }
 /**

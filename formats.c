@@ -17,6 +17,8 @@ int get_func(char format, va_list args)
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
+		{"u", print_unsigned},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 
@@ -38,7 +40,7 @@ int get_func(char format, va_list args)
  */
 int validate(char format)
 {
-	char *validators = "csdi";
+	char *validators = "csdiub";
 	int i = 0, val = 0;
 
 	while (validators[i])
